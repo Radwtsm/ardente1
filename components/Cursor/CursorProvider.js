@@ -55,10 +55,10 @@ const CursorProvider = ({ children }) => {
       height: 10,
       width: 10,
       fontSize: "16px",
-      backgroundColor: "white",
+      backgroundColor: "#dad9d9",
       x: mouseXPosition,
       y: mouseYPosition,
-      color: "white",
+      color: "#dad9d9",
       transition: {
         type: "spring",
         mass: 0.3

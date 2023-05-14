@@ -33,14 +33,13 @@ const Footer = () => {
                     </Container>
                 </Grid>
                 <Grid xs={3}>
-                    <Container>
-                        <span>
-                            <p>Iscriviti alla nostra newsletter</p>
-                            <p>per non perderti tutte le novità.</p>
-                        </span>
+                    <Container className={styles.newsletter}>
+                        <p>Iscriviti alla nostra newsletter non perderti tutte le novità.</p>
 
-                        <input type="text" placeholder='email address' />
-                        <button>Subscribe</button>
+
+
+                        <input className={styles.input} type="text" placeholder='email address' />
+                        <button className={styles.button}>Subscribe</button>
                     </Container>
                 </Grid>
 

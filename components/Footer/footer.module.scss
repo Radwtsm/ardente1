@@ -12,7 +12,7 @@
 
 .body {
     // height: 50vh;
-    color: white;
+    color: #dad9d9;
 
     // padding-top: 2rem;
     // padding: 5rem 5rem 2rem 2rem;
@@ -23,7 +23,8 @@
     // padding-left: 2rem;
 
     // padding:2rem
-    font-size: 1rem;
+    font-size: 1.2rem;
+
 }
 
 .one {
@@ -38,14 +39,39 @@
 .logo {
     margin: 0;
     width: 10rem;
+    height: fit-content;
     
 }
 
 .privacy_cookie {
     display: flex;
+    gap: 0.5rem;
 }
 
 .titolo {
     font-size: 2rem;
     font-weight: 900;
+}
+
+.newsletter {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+
+    line-height: 90%;
+}
+
+.input {
+    background-color: #0a0a09;
+    border-bottom: 2px double #dad9d9;
+    outline: none;
+    cursor: none;
+}
+
+.button {
+    border: 2px double #dad9d9;
+    border-radius: 3px;
+    padding: 0.2rem;
 }
