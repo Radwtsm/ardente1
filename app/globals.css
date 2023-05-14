@@ -68,3 +68,12 @@ body {
   }
 } */
 
+.Typewriter__wrapper .Typewriter__cursor {
+  z-index: 1;
+  position: absolute;
+  left: 20px;
+  width: 2px;
+  background-color: #000;
+  height: 20px;
+}
+

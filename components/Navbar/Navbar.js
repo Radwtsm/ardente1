@@ -37,6 +37,7 @@ const Navbar = () => {
                 // .pauseFor(2500)
                 .deleteChars(4)
                 .typeString('.')
+                .typeString('<div style="width:40px;height:40px;display:inline-block;margin-right:20px;"><img style="width:100%;height:100%;display:inline;margin-left:15px" src="/images/small_logo.png" /></div>')
                 .pauseFor(10000)
                 // .pauseFor(4000)
                 // .callFunction(() => {
