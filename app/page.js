@@ -12,9 +12,9 @@ export default function Home() {
   const dispatch = useDispatch()
 
   return (
-    <Grid className={`${styles.main_container} m-0 mt-5`} container spacing={2} padding={0} onMouseEnter={() => dispatch(isProject())} onMouseLeave={() => dispatch(isDefault())}>
+    <Grid margin={0} marginTop={2} className={styles.main_container} container spacing={2} padding={0} onMouseEnter={() => dispatch(isProject())} onMouseLeave={() => dispatch(isDefault())}>
 
-      <Grid className={`${styles.first} pl-0`} xs={6} gap={2}>
+      <Grid className={styles.first} paddingLeft={0} xs={6} gap={2}>
         <Container className={styles.first_one}></Container>
         <Container className={styles.first_two}></Container>
 
@@ -25,7 +25,7 @@ export default function Home() {
         <Container className={styles.second_one}></Container>
         <Container className={styles.second_two}></Container>
       </Grid>
-      <Grid className={`${styles.third} pr-0`} xs={3}>
+      <Grid className={styles.third} paddingRight={0} xs={3}>
         <Container className={styles.third_one}></Container>
       </Grid>
 
