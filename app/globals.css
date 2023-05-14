@@ -9,5 +9,23 @@
 }
 
 body {
+  /* overflow: hidden;  */
   background-color: var(--nero);
   }
+
+  /* Hide the scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Add custom styling to the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+/* Add custom styling to the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 10px;
+}

@@ -1,0 +1,58 @@
+
+
+.main_container {
+    width: 100%;
+    height: 80vh;
+    // background-color: gray;
+}
+
+.first {
+    height: 100%;
+    // background-color: red;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    // gap: 0.5rem;
+}
+
+.first_one {
+    background-color: gray;
+    height: 60%;
+}
+
+.first_two {
+    background-color: #26328d;
+    height: 40%;
+
+}
+
+.second {
+    // background-color: blue;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.second_one {
+    background-color: gray;
+
+    height: 40%;
+
+}
+
+.second_two {
+    background-color: #db2213;
+
+    height: 60%;
+
+}
+
+.third {
+    // background-color: aquamarine;
+}
+
+.third_one {
+    height: 100%;
+    background-color: #f2ed04;
+}
