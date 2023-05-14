@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --nero:#0a0a09;
+}
+
+body {
+  background-color: var(--nero);
+  }
