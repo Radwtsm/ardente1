@@ -11,5 +11,41 @@
 }
 
 .body {
-    height: 40vh;
+    // height: 50vh;
+    color: white;
+
+    // padding-top: 2rem;
+    // padding: 5rem 5rem 2rem 2rem;
+    justify-content: space-around;
+    padding: 2rem;
+
+    // padding-right: 2rem;
+    // padding-left: 2rem;
+
+    // padding:2rem
+    font-size: 1rem;
+}
+
+.one {
+    // flex flex-col justify-center 
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    margin: 0;
+    width: 10rem;
+    
+}
+
+.privacy_cookie {
+    display: flex;
+}
+
+.titolo {
+    font-size: 2rem;
+    font-weight: 900;
 }

@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar/Navbar'
 import { useState, useRef, useContext, createContext } from 'react';
 import useMouse from '@react-hook/mouse-position';
 import { motion } from 'framer-motion';
-// import styles from './layout.module.scss'
+import styles from './layout.module.scss'
 
 import store from '../components/Cursor/store';
 import { Provider } from 'react-redux'
@@ -132,7 +132,7 @@ export default function RootLayout({ children }) {
   return (
     <Provider store={store}>
       <html lang="en" style={{ cursor: 'none' }}>
-        <body className="" >
+        <body className={styles.overflow_x} >
 
           {/* {mouse.y && mouse.x ? <motion.div
             variants={variants}
@@ -145,7 +145,7 @@ export default function RootLayout({ children }) {
           </motion.div> : null} */}
 
           <CursorProvider>
-            <div className='px-8'>
+            <div className={styles.padding}>
               <Navbar />
               {children}
             </div>

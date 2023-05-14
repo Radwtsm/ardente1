@@ -17,9 +17,9 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`${styles.main} flex justify-between items-center my-3 `}>
+      <div className={styles.main}>
 
-        <div className='flex list-none gap-5'>
+        <div className={styles.list}>
           <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} className={pathname === '/servizi' ? styles.active_link : styles.link} href='/servizi'>SERVIZI</Link>
           <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} className={pathname === '/studio' ? styles.active_link : styles.link} href='/studio'>STUDIO</Link>
         </div>
