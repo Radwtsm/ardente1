@@ -34,12 +34,14 @@ const CursorProvider = ({ children }) => {
 
   const ref = useRef(null);
   const mouse = useMouse(ref, {
+
     enterDelay: 0,
     leaveDelay: 0
   });
 
   let mouseXPosition = null;
   let mouseYPosition = null;
+
 
   if (mouse.x !== null) {
     mouseXPosition = mouse.clientX;
@@ -59,10 +61,10 @@ const CursorProvider = ({ children }) => {
       x: mouseXPosition,
       y: mouseYPosition,
       color: "#dad9d9",
-      transition: {
-        type: "spring",
-        mass: 0.3
-      }
+      // transition: {
+      //   type: "spring",
+      //   mass: 0.3
+      // }
     },
     hidden: {
       opacity: 0,
@@ -93,10 +95,10 @@ const CursorProvider = ({ children }) => {
       // y: mouseYPosition - 32
       x: mouseXPosition,
       y: mouseYPosition,
-      transition: {
-        type: "spring",
-        mass: 0.3
-      }
+      // transition: {
+      //   type: "spring",
+      //   mass: 0.3
+      // }
     },
     // contact: {
     //   opacity: 1,

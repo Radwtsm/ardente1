@@ -131,10 +131,12 @@ export default function RootLayout({ children }) {
 
   return (
     <Provider store={store}>
+
       <html lang="en" style={{ cursor: 'none' }}>
         <body className={styles.overflow_x} >
+          <CursorProvider>
 
-          {/* {mouse.y && mouse.x ? <motion.div
+            {/* {mouse.y && mouse.x ? <motion.div
             variants={variants}
             className={`${styles.circle} rounded-full`}
 
@@ -144,7 +146,7 @@ export default function RootLayout({ children }) {
             <span className={styles.cursorText}>{cursorText}</span>
           </motion.div> : null} */}
 
-          <CursorProvider>
+
             <div className={styles.padding}>
               <Navbar />
               {children}
@@ -152,7 +154,9 @@ export default function RootLayout({ children }) {
             <Footer />
           </CursorProvider>
         </body>
+
       </html>
+
     </Provider>
 
   )

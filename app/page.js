@@ -6,6 +6,7 @@ import { Container } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { isProject, isDefault } from '../components/Cursor/cursorSlice'
 
+import { motion } from 'framer-motion';
 
 export default function Home() {
 
@@ -15,7 +16,7 @@ export default function Home() {
     <Grid margin={0} marginTop={2} className={styles.main_container} container spacing={2} padding={0} onMouseEnter={() => dispatch(isProject())} onMouseLeave={() => dispatch(isDefault())}>
 
       <Grid className={styles.first} paddingLeft={0} xs={6} gap={2}>
-        <Container className={styles.first_one}></Container>
+        <Container className={styles.first_one}><motion.div className={styles.overlay} initial={{ opacity: 0 }} transition={{ duration: 0.5 }} whileHover={{ opacity: 1, backgroundColor: 'orange' }}></motion.div></Container>
         <Container className={styles.first_two}></Container>
 
         {/* <div >1</div>
