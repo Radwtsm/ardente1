@@ -32,6 +32,8 @@ const CursorProvider = ({ children }) => {
 
 
 
+
+
   const ref = useRef(null);
   const mouse = useMouse(ref, {
 
@@ -61,10 +63,10 @@ const CursorProvider = ({ children }) => {
       x: mouseXPosition,
       y: mouseYPosition,
       color: "#dad9d9",
-      // transition: {
-      //   type: "spring",
-      //   mass: 0.3
-      // }
+      transition: {
+        type: "spring",
+        mass: 0.3
+      }
     },
     hidden: {
       opacity: 0,
@@ -95,10 +97,10 @@ const CursorProvider = ({ children }) => {
       // y: mouseYPosition - 32
       x: mouseXPosition,
       y: mouseYPosition,
-      // transition: {
-      //   type: "spring",
-      //   mass: 0.3
-      // }
+      transition: {
+        type: "spring",
+        mass: 0.3
+      }
     },
     // contact: {
     //   opacity: 1,
@@ -158,7 +160,7 @@ const CursorProvider = ({ children }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={spring} className={styles.cursorText}>{cursorText}</motion.span>}
+          transition={{ duration: 1 }} className={styles.cursorText}>{cursorText}</motion.span>}
 
       </motion.div> : null}
       {children}
