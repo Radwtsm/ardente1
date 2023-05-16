@@ -33,9 +33,14 @@ const Cursortwo = () => {
       }, [cursor,cursorVariant])
 
 
+
+
   const [point, setPoint] = useState({ x: 0, y: 0 });
   const { x, y } = point;
+
+
   const ref = useRef();
+
 
   useEffect(() => {
     if (!ref.current) return;
@@ -53,6 +58,7 @@ const Cursortwo = () => {
 
     return () => {
       window.removeEventListener("pointermove", handlePointerMove);
+      
     };
   }, []);
 
@@ -68,6 +74,11 @@ const Cursortwo = () => {
     mouseYPosition = y;
   }
 
+  document.documentElement.addEventListener('mouseleave', () => {
+    mouseXPosition = null;
+    mouseYPosition = null;
+})
+
 
 
   const variants = {
@@ -81,6 +92,7 @@ const Cursortwo = () => {
       y: mouseYPosition,
       color: "#dad9d9",
       transition: {
+        duration:0,
         type: "spring",
         mass: 0.3
       }
@@ -90,6 +102,9 @@ const Cursortwo = () => {
 
     },
     link: {
+      transition:{
+        duration:0
+      },
       opacity: 1,
       height: 10,
       width: 10,
@@ -108,6 +123,9 @@ const Cursortwo = () => {
       fontSize: "18px",
       backgroundColor: "rgba(0, 0, 0, 0.3)",
       color: "white",
+      transition:{
+        duration:0,
+      },
 
 
       // x: mouseXPosition - 32,
@@ -133,8 +151,8 @@ const Cursortwo = () => {
 
   const spring = {
     type: "spring",
-    stiffness: 100,
-    damping: 20
+    stiffness: 1,
+    damping: 0.1
   };
 
   // function linkEner(event) {
@@ -165,6 +183,8 @@ const Cursortwo = () => {
 
 
   return (
+    <>
+    
     <motion.div
       ref={ref}
       variants={variants}
@@ -174,11 +194,12 @@ const Cursortwo = () => {
       style={{
         transform: `translate(${x}px, ${y}px)`,
       }}
-    >{cursorText && <motion.span
+    > <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.2 }} className={styles.cursorText}>{cursorText}</motion.span>}</motion.div>
+        transition={{ duration: 0.2 }} className={styles.cursorText}>{cursorText}</motion.span></motion.div>
+        </>
   );
 };
 

@@ -18,7 +18,10 @@ export const cursorSlice = createSlice({
         },
         isProject: (state) => {
             state.value = 'project'
-        }
+        },
+        isHidden: (state) => {
+            state.value = 'hidden'
+        },
         //   incrementByAmount: (state, action) => {
         //     state.value += action.payload
         //   },
