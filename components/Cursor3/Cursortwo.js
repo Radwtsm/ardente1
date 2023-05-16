@@ -74,10 +74,7 @@ const Cursortwo = () => {
     mouseYPosition = y;
   }
 
-  document.documentElement.addEventListener('mouseleave', () => {
-    mouseXPosition = null;
-    mouseYPosition = null;
-})
+
 
 
 
