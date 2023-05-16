@@ -16,6 +16,7 @@ import CursorProvider from '../components/Cursor/CursorProvider';
 import Footer from '@/components/Footer/Footer';
 
 import Cursorone from '@/components/Cursor2/Cursorone';
+import Cursortwo from '@/components/Cursor3/Cursortwo';
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -134,9 +135,10 @@ export default function RootLayout({ children }) {
   return (
     <Provider store={store}>
 
-      <html lang="en" style={{ cursor: 'none' }}>
+      <html lang="en" style={{ cursor: '' }}>
         <body className={styles.overflow_x} >
-          <CursorProvider>
+          <Cursortwo/>
+          {/* <CursorProvider> */}
             {/* <Cursorone /> */}
 
             {/* {mouse.y && mouse.x ? <motion.div
@@ -155,7 +157,7 @@ export default function RootLayout({ children }) {
               {children}
             </div>
             <Footer />
-          </CursorProvider>
+          {/* </CursorProvider> */}
 
         </body>
 

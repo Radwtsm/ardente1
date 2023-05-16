@@ -87,3 +87,19 @@ body {
   left: 0;
   pointer-events: none;
 }
+
+.mousefollow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* filter: blur(20px); */
+  background-color: red;
+  /* background: linear-gradient(#43d9ad, #4d5bce); */
+  opacity: 1;
+  z-index: 2;
+  pointer-events: none;
+  /* transition: transform 300ms cubic-bezier(0.17, 0.67, 0.83, 0.67); */
+}
