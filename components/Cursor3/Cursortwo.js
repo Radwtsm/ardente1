@@ -2,8 +2,37 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import styles from '../Cursor/cursor.module.scss'
 
 const Cursortwo = () => {
+
+    const cursor = useSelector((state) => state.cursor.value)
+    const [cursorText, setCursorText] = useState(null);
+    const [cursorVariant, setCursorVariant] = useState("default");
+
+    useEffect(() => {
+        switch (cursor) {
+          case 'default':
+            setCursorVariant("default")
+            setCursorText(null)
+            console.log(cursorVariant)
+  
+            break;
+          case 'link':
+            setCursorVariant("link")
+            console.log(cursorVariant)
+  
+            break;
+          case 'project':
+            setCursorVariant("project")
+            setTimeout(setCursorText("Learn More"), 3000)
+            console.log(cursorVariant)
+    
+        }
+      }, [cursor,cursorVariant])
+
+
   const [point, setPoint] = useState({ x: 0, y: 0 });
   const { x, y } = point;
   const ref = useRef();
@@ -17,7 +46,7 @@ const Cursortwo = () => {
       const x = clientX - element.offsetLeft - element.offsetWidth / 2;
       const y = clientY - element.offsetTop - element.offsetHeight / 2;
       setPoint({ x, y });
-      console.log(x, y);
+    //   console.log(x, y);
     };
 
     window.addEventListener("pointermove", handlePointerMove);
@@ -27,14 +56,129 @@ const Cursortwo = () => {
     };
   }, []);
 
+  let mouseXPosition = null;
+  let mouseYPosition = null;
+
+
+  if (x !== null) {
+    mouseXPosition = x;
+  }
+
+  if (y !== null) {
+    mouseYPosition = y;
+  }
+
+
+
+  const variants = {
+    default: {
+      opacity: 1,
+      height: 10,
+      width: 10,
+      fontSize: "16px",
+      backgroundColor: "#dad9d9",
+      x: mouseXPosition,
+      y: mouseYPosition,
+      color: "#dad9d9",
+      transition: {
+        type: "spring",
+        mass: 0.3
+      }
+    },
+    hidden: {
+      opacity: 0,
+
+    },
+    link: {
+      opacity: 1,
+      height: 10,
+      width: 10,
+      fontSize: "16px",
+      backgroundColor: "red",
+      x: mouseXPosition,
+      y: mouseYPosition,
+    },
+    project: {
+      opacity: 1,
+      // backgroundColor: "rgba(255, 255, 255, 0.6)",
+      // backgroundColor: "#fff",
+      color: "#000",
+      height: 60,
+      width: 60,
+      fontSize: "18px",
+      backgroundColor: "rgba(0, 0, 0, 0.3)",
+      color: "white",
+
+
+      // x: mouseXPosition - 32,
+      // y: mouseYPosition - 32
+      x: mouseXPosition,
+      y: mouseYPosition,
+      transition: {
+        type: "spring",
+        mass: 0.3
+      }
+    },
+    // contact: {
+    //   opacity: 1,
+    //   backgroundColor: "#FFBCBC",
+    //   color: "#000",
+    //   height: 64,
+    //   width: 64,
+    //   fontSize: "32px",
+    //   x: mouseXPosition - 48,
+    //   y: mouseYPosition - 48
+    // }
+  };
+
+  const spring = {
+    type: "spring",
+    stiffness: 100,
+    damping: 20
+  };
+
+  // function linkEner(event) {
+
+  // }
+
+
+
+  function projectEnter(event) {
+    setCursorText("View");
+    setCursorVariant("project");
+  }
+
+  function projectLeave(event) {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
+  function contactEnter(event) {
+    setCursorText("👋");
+    setCursorVariant("contact");
+  }
+
+  function contactLeave(event) {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
+
   return (
-    <div
+    <motion.div
       ref={ref}
-      className="mousefollow"
+      variants={variants}
+      animate={cursorVariant}
+      transition={spring}
+      className={`${styles.circle} rounded-full`}
       style={{
         transform: `translate(${x}px, ${y}px)`,
       }}
-    ></div>
+    >{cursorText && <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2 }} className={styles.cursorText}>{cursorText}</motion.span>}</motion.div>
   );
 };
 
