@@ -137,7 +137,8 @@ export default function RootLayout({ children }) {
 
       <html lang="en" style={{ cursor: 'none' }}>
         <body className={styles.overflow_x} >
-          
+        <Cursortwo/>
+
           {/* <CursorProvider> */}
             {/* <Cursorone /> */}
 
@@ -153,7 +154,6 @@ export default function RootLayout({ children }) {
 
 
             <div className={styles.padding}>
-            <Cursortwo/>
               <Navbar />
               {children}
             </div>
