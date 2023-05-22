@@ -1,0 +1,33 @@
+.input {
+    background-color: #0a0a09;
+    border-bottom: 2px double #dad9d9;
+    outline: none;
+    cursor: none;
+}
+
+.input:not(:focus) {
+    background-color: #0a0a09;
+    border-bottom: 2px double #dad9d9;
+    outline: none;
+    cursor: none;
+  }
+
+
+.error_input {
+    background-color: #0a0a09;
+    border-bottom: 2px double red;
+    outline: none;
+    cursor: none;
+}
+
+.button {
+    border: 2px double #dad9d9;
+    border-radius: 3px;
+    padding: 0.2rem;
+    margin-top: 0.3rem;
+    cursor: none;
+}
+
+.error {
+    color: red;
+}

@@ -100,13 +100,13 @@ const Cursortwo = () => {
     },
     link: {
       transition:{
-        duration:0
+        duration:0.1
       },
       opacity: 1,
       height: 10,
       width: 10,
       fontSize: "16px",
-      backgroundColor: "red",
+      backgroundColor: "#ff7200",
       x: mouseXPosition,
       y: mouseYPosition,
     },
@@ -121,7 +121,7 @@ const Cursortwo = () => {
       backgroundColor: "rgba(0, 0, 0, 0.3)",
       color: "white",
       transition:{
-        duration:0,
+        duration:0.1,
       },
 
 
@@ -129,10 +129,10 @@ const Cursortwo = () => {
       // y: mouseYPosition - 32
       x: mouseXPosition,
       y: mouseYPosition,
-      transition: {
-        type: "spring",
-        mass: 0.3
-      }
+      // transition: {
+      //   type: "spring",
+      //   mass: 0.3
+      // }
     },
     // contact: {
     //   opacity: 1,

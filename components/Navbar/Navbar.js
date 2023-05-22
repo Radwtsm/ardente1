@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} className={pathname === '/studio' ? styles.active_link : styles.link} href='/studio'>STUDIO</Link>
         </div>
 
-        <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} href='/mission' className={`${styles.logo}`}>
+        <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} href='/' className={`${styles.logo}`}>
           <Typewriter
             options={{
               autoStart: true,
