@@ -10,6 +10,7 @@ const Block = (props) => {
   return (
 
 <Container
+ disableGutters={true}
  onMouseEnter={()=>setIsHovering(true)} 
  onMouseLeave={()=>{setIsHovering(false)}} 
  style={{backgroundColor:bg,height:height}}

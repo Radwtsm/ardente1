@@ -77,7 +77,7 @@ signInAnonymously(auth)
       });
     
       console.log("Document written with ID: ", docRef.id);
-      isLoading(false);
+      setIsLoading(false);
       switchSuccess()
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -100,11 +100,11 @@ signInAnonymously(auth)
     <p>Iscriviti alla nostra newsletter non perderti tutte le novità.</p>
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
-      {success && <div>successo!</div>}
+      {success && <div style={{color:'green'}}>successo!</div>}
       {errors.email && <span className={styles.error}>{errors.email.message}</span>}
-
+      {isLoading && <CircularProgress color="secondary" /> }
       <input placeholder='email address' className={styles.input} {...register("email",{required:true,pattern:{value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: 'Invalid email address',}})}/> 
+            message: 'Invalid email address',}})} disabled={isLoading}/> 
       <input className={styles.button} value="Subscribe" type="submit" disabled={isLoading}/>
     </form>
 
