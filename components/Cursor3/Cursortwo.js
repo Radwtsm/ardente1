@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import styles from '../Cursor/cursor.module.scss'
 
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+
+
 const Cursortwo = () => {
 
     const cursor = useSelector((state) => state.cursor.value)
@@ -181,8 +184,7 @@ const Cursortwo = () => {
 
   return (
     <>
-    
-    <motion.div
+    {isBrowser && <motion.div
       ref={ref}
       variants={variants}
       animate={cursorVariant}
@@ -195,7 +197,8 @@ const Cursortwo = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.2 }} className={styles.cursorText}>{cursorText}</motion.span></motion.div>
+        transition={{ duration: 0.2 }} className={styles.cursorText}>{cursorText}</motion.span></motion.div>}
+    
         </>
   );
 };

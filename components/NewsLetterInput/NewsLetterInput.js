@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 
 import styles from './NewsLetterInput.module.scss'
@@ -11,12 +11,24 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { addDoc, collection } from "firebase/firestore";
 import { getAuth, signInAnonymously } from "firebase/auth";
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 
 // import { google } from 'googleapis';
 
 
 const NewsLetterInput = () => {
+
+  const [success,setSuccess] = useState(false);
+  const [isLoading,setIsLoading] = useState(false);
+
+  const switchSuccess = () => {
+    setTimeout(() => {
+      setSuccess(true)
+    }, 7000);
+    setSuccess(false)
+  }
 
   // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -53,7 +65,8 @@ console.log(app,db)
   // console.log(process.env.GOOGLE_PRIVATE_KEY)
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = data => {
-    console.log(data);
+    setIsLoading(true);
+    // console.log(data);
 
     const auth = getAuth();
 signInAnonymously(auth)
@@ -64,6 +77,8 @@ signInAnonymously(auth)
       });
     
       console.log("Document written with ID: ", docRef.id);
+      isLoading(false);
+      switchSuccess()
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -78,18 +93,19 @@ signInAnonymously(auth)
     
   }
 
-  console.log(watch("email")); // watch input value by passing the name of it
+  // console.log(watch("email")); // watch input value by passing the name of it
 
   return (
     <>
     <p>Iscriviti alla nostra newsletter non perderti tutte le novità.</p>
     <form onSubmit={handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
+      {success && <div>successo!</div>}
       {errors.email && <span className={styles.error}>{errors.email.message}</span>}
 
       <input placeholder='email address' className={styles.input} {...register("email",{required:true,pattern:{value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             message: 'Invalid email address',}})}/> 
-      <input className={styles.button} value="Subscribe" type="submit"/>
+      <input className={styles.button} value="Subscribe" type="submit" disabled={isLoading}/>
     </form>
 
 

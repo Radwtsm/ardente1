@@ -10,16 +10,18 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Block from '@/components/Block/Block';
 
+
 export default function Home() {
 
   const dispatch = useDispatch()
 
+  
 
 
   return (
     <Grid margin={0} marginTop={2} className={styles.main_container} container spacing={2} padding={0} onMouseEnter={() => dispatch(isProject())} onMouseLeave={() => dispatch(isDefault())}>
 
-      <Grid className={styles.first} paddingLeft={0} xs={6} gap={2}>
+      <Grid className={styles.first} paddingLeft={0}  xs={6} gap={2}>
         <Block bg="gray" overlay="rgba(255,114,0,0.54)" text="test11" height="60%" />
         <Block bg="gray" overlay="red" text="good" height="40%" />
       </Grid>
@@ -35,7 +37,7 @@ export default function Home() {
 
       </Grid>
 
-
+    
 
     </Grid>
   )
