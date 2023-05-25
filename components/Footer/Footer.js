@@ -32,10 +32,12 @@ const Footer = () => {
                 </Grid>
                 <Grid xs={3}>
                     <Container style={{display:'flex',flexDirection:'column',justifyContent:'space-between',height:'100%'}}>
+                        <div>
                         <p>{`CHE-400.347.843`}</p>
                         <div className={styles.privacy_cookie}>
                             <p>Privacy</p>
                             {/* <p>Cookies</p> */}
+                        </div>
                         </div>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ardentestudio/">
                             <Image alt='icona ig' width={50} height={50} src="/images/ig.png"/>

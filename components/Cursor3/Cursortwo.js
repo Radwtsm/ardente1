@@ -19,18 +19,18 @@ const Cursortwo = () => {
           case 'default':
             setCursorVariant("default")
             setCursorText(null)
-            console.log(cursorVariant)
+            // console.log(cursorVariant)
   
             break;
           case 'link':
             setCursorVariant("link")
-            console.log(cursorVariant)
+            // console.log(cursorVariant)
   
             break;
           case 'project':
             setCursorVariant("project")
             setTimeout(setCursorText("Learn More"), 3000)
-            console.log(cursorVariant)
+            // console.log(cursorVariant)
     
         }
       }, [cursor,cursorVariant])
@@ -91,6 +91,7 @@ const Cursortwo = () => {
       x: mouseXPosition,
       y: mouseYPosition,
       color: "#dad9d9",
+      mixBlendMode: 'difference',
       transition: {
         duration:0,
         type: "spring",
@@ -192,6 +193,8 @@ const Cursortwo = () => {
       className={`${styles.circle} rounded-full`}
       style={{
         transform: `translate(${x}px, ${y}px)`,
+        
+        
       }}
     > <motion.span
         initial={{ opacity: 0 }}

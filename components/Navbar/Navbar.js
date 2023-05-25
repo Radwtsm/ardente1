@@ -26,6 +26,7 @@ const Navbar = () => {
 
         <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} href='/' className={`${styles.logo}`}>
           <Typewriter
+            className={styles.text_cursor}
             options={{
               autoStart: true,
               loop: true,

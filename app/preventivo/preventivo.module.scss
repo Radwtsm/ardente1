@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+}
+
+.second_container {
+    color: white;
+    height: 80vh;
+    background-color: purple;
+}
+
+
+.top {
+    color: white;
+}
+
+.form {
+    color: white;
+    width: 96vh;
+    // padding: 2rem;
+}
+
+.form_el {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form_ln {
+    display: flex;
+     gap: 3rem;
+     margin-top: 2rem;
+     margin-bottom: 2rem;
+    // justify-content: ;
+}
+
+.last_inp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input {
+    background-color: #0a0a09;
+    border-bottom: 2px double #dad9d9;
+    outline: none;
+    cursor: none;
+}

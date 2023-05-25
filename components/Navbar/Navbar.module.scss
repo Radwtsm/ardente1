@@ -1,3 +1,6 @@
+@import '../../styles/variables';
+
+
 @font-face {
     font-family: 'Rifton';
     src: url('/fonts/Rifton_Norm.otf') format('opentype');
@@ -8,19 +11,29 @@
     src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
   }
 
+//   $xs: 0px;
+//   $sm: 600px;
+//   $md: 900px;
+//   $lg: 1200px;
+//   $xl: 1536px;
+
   
 
 .main {
     color: #444444;
     font-family: 'Montreal';
     height: 10vh;
-    font-size: 2rem;
+    font-size: 1.3rem;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+
+    @media (min-width:$md) {
+        font-size: 2rem;
+    }
 
     // flex justify-between items-center my-3
 }
@@ -35,7 +48,23 @@
 .logo {
     color: #dad9d9;
     font-family: 'Rifton';
-    font-size: 3rem;
+    font-size: 1rem;
+    
+    // @media (min-width: $xs) {
+    //     font-size: 1rem;
+
+    // }
+
+    @media (min-width: $sm) {
+        font-size: 2rem;
+
+    }
+
+    @media (min-width: $md) {
+        font-size: 3rem;
+
+    }
+    
 }
 
 .line {

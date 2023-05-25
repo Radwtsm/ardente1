@@ -3,12 +3,12 @@
 
 import './globals.css'
 import Navbar from '../components/Navbar/Navbar'
-import { useState, useRef, useContext, createContext } from 'react';
+import { useState, useRef, useContext, createContext, useEffect } from 'react';
 import useMouse from '@react-hook/mouse-position';
-import { motion } from 'framer-motion';
+import { motion,AnimatePresence } from 'framer-motion';
 import styles from './layout.module.scss'
 
-import store from '../components/Cursor/store';
+import store from './store';
 import { Provider } from 'react-redux'
 import { useSelector } from 'react-redux';
 import CursorProvider from '../components/Cursor/CursorProvider';
@@ -17,6 +17,10 @@ import Footer from '@/components/Footer/Footer';
 
 import Cursorone from '@/components/Cursor2/Cursorone';
 import Cursortwo from '@/components/Cursor3/Cursortwo';
+import { duration } from '@mui/material';
+
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 
 // export const metadata = {
 //   title: 'Create Next App',
@@ -28,108 +32,8 @@ import Cursortwo from '@/components/Cursor3/Cursortwo';
 
 export default function RootLayout({ children }) {
 
-
-  // const [cursorText, setCursorText] = useState("");
-  // const [cursorVariant, setCursorVariant] = useState("default");
-
-
-
-  // const ref = useRef(null);
-  // const mouse = useMouse(ref, {
-  //   enterDelay: 0,
-  //   leaveDelay: 0
-  // });
-
-  // let mouseXPosition = null;
-  // let mouseYPosition = null;
-
-  // if (mouse.x !== null) {
-  //   mouseXPosition = mouse.clientX;
-  // }
-
-  // if (mouse.y !== null) {
-  //   mouseYPosition = mouse.clientY;
-  // }
-
-  // const variants = {
-  //   default: {
-  //     opacity: 1,
-  //     height: 10,
-  //     width: 10,
-  //     fontSize: "16px",
-  //     backgroundColor: "white",
-  //     x: mouseXPosition,
-  //     y: mouseYPosition,
-  //     transition: {
-  //       // type: "spring",
-  //       // mass: 1
-  //     }
-  //   },
-  //   hidden: {
-  //     opacity: 0,
-
-  //   },
-  //   link: {
-  //     opacity: 1,
-  //     height: 10,
-  //     width: 10,
-  //     fontSize: "16px",
-  //     backgroundColor: "red",
-  //     x: mouseXPosition,
-  //     y: mouseYPosition,
-  //   }
-  //   // project: {
-  //   //   opacity: 1,
-  //   //   // backgroundColor: "rgba(255, 255, 255, 0.6)",
-  //   //   backgroundColor: "#fff",
-  //   //   color: "#000",
-  //   //   height: 80,
-  //   //   width: 80,
-  //   //   fontSize: "18px",
-  //   //   x: mouseXPosition - 32,
-  //   //   y: mouseYPosition - 32
-  //   // },
-  //   // contact: {
-  //   //   opacity: 1,
-  //   //   backgroundColor: "#FFBCBC",
-  //   //   color: "#000",
-  //   //   height: 64,
-  //   //   width: 64,
-  //   //   fontSize: "32px",
-  //   //   x: mouseXPosition - 48,
-  //   //   y: mouseYPosition - 48
-  //   // }
-  // };
-
-  // const spring = {
-  //   type: "spring",
-  //   // stiffness: 500,
-  //   // damping: 10
-  // };
-
-  // // function linkEner(event) {
-
-  // // }
-
-  // function projectEnter(event) {
-  //   setCursorText("View");
-  //   setCursorVariant("project");
-  // }
-
-  // function projectLeave(event) {
-  //   setCursorText("");
-  //   setCursorVariant("default");
-  // }
-
-  // function contactEnter(event) {
-  //   setCursorText("👋");
-  //   setCursorVariant("contact");
-  // }
-
-  // function contactLeave(event) {
-  //   setCursorText("");
-  //   setCursorVariant("default");
-  // }
+  const router = usePathname()
+  console.log(router.path)
 
 
   return (
@@ -137,29 +41,32 @@ export default function RootLayout({ children }) {
 
       <html lang="en" style={{ cursor: 'none' }}>
         <body className={styles.overflow_x} >
-          
-          {/* <CursorProvider> */}
-            {/* <Cursorone /> */}
+        <motion.div key={router} initial="pageInitial" animate="pageAnimate" transition={{duration:4}} variants={{
+  pageInitial: {
+    opacity: 0
+  },
+  pageAnimate: {
+    opacity: 1
+  },
+}}>
 
-            {/* {mouse.y && mouse.x ? <motion.div
-            variants={variants}
-            className={`${styles.circle} rounded-full`}
-
-            animate={cursorVariant}
-          // transition={spring}
-          >
-            <span className={styles.cursorText}>{cursorText}</span>
-          </motion.div> : null} */}
 
 
             <div className={styles.padding}>
             <Cursortwo/>
-              <Navbar />
+            
+
+              <Navbar key="navbar" />
+              <div key={router}>
               {children}
+              
+              </div>
+
+              
             </div>
             <Footer />
           {/* </CursorProvider> */}
-
+          </motion.div>
         </body>
 
       </html>
