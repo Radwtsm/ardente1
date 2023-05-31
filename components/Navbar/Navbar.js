@@ -19,10 +19,10 @@ const Navbar = () => {
     <>
       <div className={styles.main}>
 
-        <div className={styles.list}>
+        {/* <div className={styles.list}>
           <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} className={pathname === '/servizi' ? styles.active_link : styles.link} href='/servizi'>SERVIZI</Link>
           <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} className={pathname === '/studio' ? styles.active_link : styles.link} href='/studio'>STUDIO</Link>
-        </div>
+        </div> */}
 
         <Link onMouseEnter={() => dispatch(isLink())} onMouseLeave={() => dispatch(isDefault())} style={{ cursor: 'none' }} href='/' className={`${styles.logo}`}>
           <Typewriter
@@ -55,7 +55,7 @@ const Navbar = () => {
         </Link>
 
       </div>
-      <div className={`${styles.line}`}></div>
+      {/* <div className={`${styles.line}`}></div> */}
     </>
   )
 }

@@ -1,44 +1,31 @@
 'use client'
 
-import styles from './home.module.scss'
-import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
-import { Container } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { isProject, isDefault } from '../components/Cursor/cursorSlice'
-
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import Block from '@/components/Block/Block';
+import Marquee from "react-fast-marquee";
+import styles from "./header.styles.scss"
 
 
-export default function Home() {
+const page = () => {
+    return(
 
-  const dispatch = useDispatch()
+<div class="angry-grid">
+  <div id="item-0">&nbsp;</div>
+  <div id="item-1">&nbsp;</div>
+  <div id="item-2">&nbsp;</div>
+  <div id="item-3">&nbsp;</div>
+  <div id="item-4">&nbsp;</div>
+  <div id="item-5">&nbsp;</div>
+  <div id="item-6">&nbsp;</div>
+  <div id="item-7">&nbsp;</div>
+  <div id="item-8">&nbsp;</div>
+  <div id="item-9">&nbsp;</div>
+  <div id="item-10"><Marquee autoFill={true} className="" style={{height:'100%',marginTop:'auto',marginBottom:'auto',fontSize:'7rem',fontWeight:700}}>{`ROBA`}</Marquee></div>
+  <div id="item-11">&nbsp;</div>
+  <div id="item-12">&nbsp;</div>
+  <div id="item-13">&nbsp;</div>
+  <div id="item-14">&nbsp;</div>
+</div>
 
-  
-
-
-  return (
-    <Grid key="home" margin={0} marginTop={2} className={styles.main_container} container spacing={2} padding={0} onMouseEnter={() => dispatch(isProject())} onMouseLeave={() => dispatch(isDefault())}>
-
-      <Grid className={styles.first} paddingLeft={0} xs={12}  lg={6} gap={2}>
-        <Block bg="gray" overlay="rgba(255,114,0,0.54)" text="test11" height="60%" />
-        <Block bg="gray" overlay="red" text="good" height="40%" />
-      </Grid>
-
-      <Grid className={styles.second} lg={3} gap={2}>
-        <Block bg="gray" overlay="rgba(255,114,0,0.54)" text="test11" height="40%" />
-        <Block bg="gray" overlay="red" text="good" height="60%" />
-      </Grid>
-
-      <Grid className={styles.third} paddingRight={0} lg={3}>
-        {/* <Container className={styles.third_one}></Container> */}
-        <Block bg="gray" overlay="yellow" text="good" height="100%" />
-
-      </Grid>
-
-    
-
-    </Grid>
-  )
+    )
 }
+
+export default page;
