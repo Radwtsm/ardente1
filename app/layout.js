@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
 
 
 
-            <div className={styles.padding}>
+            <div>
             <Cursortwo/>
             
 

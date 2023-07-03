@@ -12,6 +12,12 @@
   src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
 }
 
+@font-face {
+  font-family:'Thunder';
+  src: url('/fonts/Thunder-SemiBoldLCItalic.ttf') format('opentype');
+
+}
+
 :root {
   --nero:#0a0a09;
 }

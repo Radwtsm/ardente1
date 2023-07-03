@@ -99,7 +99,8 @@
 
 .p_altro {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    
 
     p {
         width: 50%;
@@ -112,8 +113,8 @@
 }
 
 .ico_count {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
 }
 
 .container_count {
@@ -121,14 +122,27 @@
     margin-bottom: 1rem;
     display: flex;
     // background-color: bisque;
-    width: 50%;
+    width:80vh;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    border-radius: 40px;
+    // background-color: #faebd7;
+    background: rgb(250,235,215);
+    background: -moz-linear-gradient(270deg, rgba(250,235,215,1) 0%, rgba(0,212,255,0) 52%);
+    background: -webkit-linear-gradient(270deg, rgba(250,235,215,1) 0%, rgba(0,212,255,0) 52%);
+    background: linear-gradient(270deg, rgba(250,235,215,1) 0%, rgba(0,212,255,0) 52%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#faebd7",endColorstr="#00d4ff",GradientType=1);
+    // background-color: red;
+    font-family: 'Rifton';
 }
 
 .counters {
     display: flex;
+    gap: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-size: 2rem;
 }
 
 .phone_marquee {
@@ -150,8 +164,16 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    font-family: 'Thunder';
+    
 }
 
 .giro_btn {
     width: 10rem;
+}
+
+.padding {
+    padding-left: 9rem;
+    padding-right: 9rem;
+
 }
