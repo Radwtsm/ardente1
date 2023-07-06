@@ -9,7 +9,7 @@ import { useInView } from "framer-motion";
 import CountUp from 'react-countup';
 import GridHeader from "./_components/GridHeader/GridHeader";
 
-const page = () => {
+const Page = () => {
 
   const counter_ref = useRef(null)
   const is_counter_view = useInView(counter_ref,{once:true})
@@ -101,4 +101,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Page;

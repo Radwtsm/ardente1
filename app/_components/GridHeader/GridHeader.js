@@ -7,7 +7,7 @@ const GridHeader = () => {
     <div className={`angry-grid ${styles.padding} max-w-screen`}>
     <div id="item-0">&nbsp;</div>
     <div id="item-1" className={`${styles.perditempo} text-xs`}><div>
-      <p>//ovunque con 2 click/</p>
+      <p>{`//ovunque con 2 click/`}</p>
       <p>{'</no perditempo>'}</p>
     </div>
     </div>
