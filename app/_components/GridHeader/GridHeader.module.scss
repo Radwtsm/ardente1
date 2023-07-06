@@ -1,0 +1,38 @@
+.padding {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+
+}
+
+
+
+.perditempo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    
+    div {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items:flex-start;
+
+        color: white;
+
+        font-weight: 900;
+        // font-size: 0.5rem;
+    }
+}
+
+.ard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rifton';
+
+    font-size: 2rem;
+    color: white;
+}

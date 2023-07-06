@@ -39,7 +39,8 @@ export default function RootLayout({ children }) {
   return (
     <Provider store={store}>
 
-      <html lang="en" style={{ cursor: 'none' }}>
+{/* <html lang="en" style={{ cursor: 'none' }}> */}
+      <html lang="en">
         <body className={styles.overflow_x} >
         <motion.div key={router} initial="pageInitial" animate="pageAnimate" transition={{duration:4}} variants={{
   pageInitial: {
@@ -53,7 +54,7 @@ export default function RootLayout({ children }) {
 
 
             <div>
-            <Cursortwo/>
+            {/* <Cursortwo/> */}
             
 
               <Navbar key="navbar" />
@@ -64,7 +65,7 @@ export default function RootLayout({ children }) {
 
               
             </div>
-            <Footer />
+            {/* <Footer /> */}
           {/* </CursorProvider> */}
           </motion.div>
         </body>
