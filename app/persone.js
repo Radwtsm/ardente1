@@ -9,8 +9,8 @@ const Persone = () => {
     left: 143px;
     bottom: 125px;
     transform: rotate(355deg); */}
-        <img src="/images/banner_chisiamo.svg" style={{width:'70%',zIndex:1,left:'142px',bottom:'125px',transform:'rotate(355deg)'}} className='text-white text-3xl absolute'/>
-        <div className='flex flex-col items-center gap-5 my-32'>
+        {/* <img src="/images/banner_chisiamo.svg" style={{width:'20%',zIndex:1,left:'142px',bottom:'125px',transform:'rotate(355deg)'}} className='text-white text-3xl absolute'/> */}
+        <div className='flex flex-col items-center gap-7 my-32'>
 
             <div className="">
                 <div className="rounded-md relative flex justify-center items-end bg-purple-700 h-96 w-48 overflow-visible">
