@@ -60,12 +60,12 @@ export default function RootLayout({ children }) {
               <Navbar key="navbar" />
               <div key={router}>
               {children}
-              
+              <Footer />
               </div>
 
               
             </div>
-            {/* <Footer /> */}
+            
           {/* </CursorProvider> */}
           </motion.div>
         </body>

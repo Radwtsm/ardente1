@@ -1,6 +1,7 @@
 .container {
     background-color: #0a0a09 ;
-    margin-top: 5rem;
+    color: white;
+    // margin-top: 5rem;
 }
 
 .marques {
@@ -12,6 +13,8 @@
 
 .body {
     // height: 50vh;
+    display: flex;
+    flex-direction: column;
     color: #dad9d9;
 
     // padding-top: 2rem;

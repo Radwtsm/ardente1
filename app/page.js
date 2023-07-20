@@ -8,6 +8,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import CountUp from 'react-countup';
 import GridHeader from "./_components/GridHeader/GridHeader";
+import CosaFacciamo from "./_components/cosaFacciamo/CosaFacciamo";
 
 const Page = () => {
 
@@ -18,8 +19,15 @@ const Page = () => {
     <>
      <GridHeader/>
 
+      {/* <div className="display-block"> */}
       <Persone />
-
+      <CosaFacciamo/>
+      {/* </div> */}
+      {/* <div className="flex text-white bg-red-300 w-64 h-64">
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div> */}
       {/* <section className="text-white my-32">
         <p className="text-center">COSA FACCIAMO?</p>
         <div className={styles.p_altro}>
